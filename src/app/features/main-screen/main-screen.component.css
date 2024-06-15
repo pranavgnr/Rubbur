@@ -1,0 +1,19 @@
+.view_tree{
+    float: right;
+    margin: 5px;
+}
+
+.back{
+    margin: 5px;
+}
+
+.branch_main {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 5px;
+}
+
+.custom_card{
+    margin-bottom: 25px;
+}

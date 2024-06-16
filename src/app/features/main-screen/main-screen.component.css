@@ -17,3 +17,16 @@
 .custom_card{
     margin-bottom: 25px;
 }
+
+.expanded_screen{
+    width: 98vw;
+    height: 98vh;
+}
+
+.branch_button {
+    z-index: 100;
+}
+
+.branch_name{
+    color: white;
+}

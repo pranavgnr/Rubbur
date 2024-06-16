@@ -1,8 +1,10 @@
 .custom_card{
     min-height: 200px;
     min-width: 200px;
+    max-height: 200px;
     background-color: #3F4448;
     color: white;
+    overflow: hidden;
 }
 
 .branch_title{

@@ -1,25 +1,21 @@
 <app-navbar></app-navbar>
-<button type="button" class="btn btn-dark back">Back</button>
-<button type="button" class="btn btn-dark view_tree">View Tree</button>
-<button type="button" class="btn btn-dark branch_main">Branch: Main</button>
+<div (click)="unexpandCard()">
+    <button type="button" class="btn btn-dark back button">Back</button>
+    <button type="button" class="btn btn-dark view_tree button">View Tree</button>
+    <p class="branch_name">{{newBranchName}}</p>
+</div>
+<button type="button" class="btn btn-dark branch_main button branch_button" (click)="newBranch()">Branch: {{newBranchName}}</button>
 
-<div class="row justify-content-center m-2">
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
-        <app-card></app-card>
+<div *ngIf="!cardExpanded" class="row justify-content-center m-2">
+    <div *ngFor="let i of mainCards" class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
+        <div (click)="onExpand(i)">
+            <app-card [data]="i" (buttonClicked)="recieveData($event)"></app-card>
+        </div>
     </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
-        <app-card></app-card>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
-        <app-card></app-card>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
-        <app-card></app-card>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
-        <app-card></app-card>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-6 col-12 custom_card">
-        <app-card></app-card>
+</div>
+
+<div class="expanded_screen">
+    <div *ngIf="cardExpanded">
+        <app-card [data]="expandedData"></app-card>
     </div>
 </div>

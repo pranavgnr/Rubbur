@@ -1,6 +1,16 @@
-<div class="card custom_card">
+<div *ngIf="!cardExpanded" class="card custom_card">
     <div class="card-body">
-      <p>{{data}}</p>
-      <button type="button" class="btn btn-dark branch_title" (click)="onNewBranchClicked()">Branch:{{title}}</button>
+      <section [innerHTML]="data"></section>
+      <button type="button" class="btn btn-dark branch_title" (click)="onNewBranchClicked()">View Book:{{title}}</button>
     </div>
+  </div>
+
+  <div *ngIf="cardExpanded" class="card editor">
+    <form [formGroup]="form">
+      <div class="NgxEditor__Wrapper editor_custom">
+        <ngx-editor-menu [editor]="editor" [toolbar]="toolbar"> </ngx-editor-menu>
+        <ngx-editor [ngModel]="html" (ngModelChange)="onChange($event)" [editor]="editor" formControlName="editorContent"> </ngx-editor>
+      </div>
+    </form>
+    <button type="button" class="btn btn-dark save_button" (click)="saveData()">Save</button>
   </div>

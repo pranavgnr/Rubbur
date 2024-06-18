@@ -1,6 +1,6 @@
 .custom_card{
-    min-height: 200px;
-    min-width: 200px;
+    min-height: 300px;
+    min-width: 300px;
     max-height: 200px;
     background-color: #3F4448;
     color: white;
@@ -9,4 +9,22 @@
 
 .branch_title{
     float: right;
+}
+
+.custom_card_expanded{
+    width: 96vw;
+    height: 96vh;
+    background-color: #3F4448;
+    color: white;
+    margin-left: 20px;
+}
+
+.editor{
+    width: 96vw;
+    height: 96vh;
+    margin-left: 20px;
+}
+
+.editor_custom {
+    background-color: #3F4448;
 }

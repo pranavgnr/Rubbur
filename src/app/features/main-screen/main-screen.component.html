@@ -2,7 +2,6 @@
 <div (click)="unexpandCard()">
     <button type="button" class="btn btn-dark back button">Back</button>
     <button type="button" class="btn btn-dark view_tree button">View Tree</button>
-    <p class="branch_name">{{newBranchName}}</p>
 </div>
 <button type="button" class="btn btn-dark branch_main button branch_button" (click)="newBranch()">Branch: {{newBranchName}}</button>
 
@@ -16,6 +15,6 @@
 
 <div class="expanded_screen">
     <div *ngIf="cardExpanded">
-        <app-card [data]="expandedData"></app-card>
+        <app-card [cardExpanded]="cardExpanded" [data]="expandedData" (buttonClicked)="recieveData($event)"></app-card>
     </div>
 </div>
